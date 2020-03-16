@@ -1,11 +1,11 @@
 package kz.greetgo.sfgpetclinic.services.map;
 
 import kz.greetgo.sfgpetclinic.model.Pet;
-import kz.greetgo.sfgpetclinic.services.CrudService;
+import kz.greetgo.sfgpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
   @Override
   public Set<Pet> findAll() {
     return super.findAll();
