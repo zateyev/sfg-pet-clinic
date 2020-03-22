@@ -1,13 +1,13 @@
 package kz.greetgo.sfgpetclinic.services.map;
 
 import kz.greetgo.sfgpetclinic.model.Specialty;
-import kz.greetgo.sfgpetclinic.services.SpecialtiesService;
+import kz.greetgo.sfgpetclinic.services.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
   @Override
   public Set<Specialty> findAll() {
     return super.findAll();
