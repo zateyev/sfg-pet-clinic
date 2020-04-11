@@ -1,7 +1,7 @@
 package kz.greetgo.sfgpetclinic.services.springdatajpa;
 
 import kz.greetgo.sfgpetclinic.model.Visit;
-import kz.greetgo.sfgpetclinic.repositories.VisityRepository;
+import kz.greetgo.sfgpetclinic.repositories.VisitRepository;
 import kz.greetgo.sfgpetclinic.services.VisitService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -13,36 +13,36 @@ import java.util.Set;
 @Profile("springdatajpa")
 public class VisitSDJpaService implements VisitService {
 
-  private final VisityRepository visityRepository;
+  private final VisitRepository visitRepository;
 
-  public VisitSDJpaService(VisityRepository visityRepository) {
-    this.visityRepository = visityRepository;
+  public VisitSDJpaService(VisitRepository visitRepository) {
+    this.visitRepository = visitRepository;
   }
 
   @Override
   public Set<Visit> findAll() {
     Set<Visit> visits = new HashSet<>();
-    visityRepository.findAll().forEach(visits::add);
+    visitRepository.findAll().forEach(visits::add);
     return visits;
   }
 
   @Override
   public Visit findById(Long aLong) {
-    return visityRepository.findById(aLong).orElse(null);
+    return visitRepository.findById(aLong).orElse(null);
   }
 
   @Override
   public Visit save(Visit object) {
-    return visityRepository.save(object);
+    return visitRepository.save(object);
   }
 
   @Override
   public void delete(Visit object) {
-    visityRepository.delete(object);
+    visitRepository.delete(object);
   }
 
   @Override
   public void deleteById(Long aLong) {
-    visityRepository.deleteById(aLong);
+    visitRepository.deleteById(aLong);
   }
 }
